@@ -27,7 +27,8 @@ import com.tuto.crud.service.ProductoService;
 public class ProductoController {
     @Autowired
     ProductoService productoService;
-
+    
+    @GetMapping("/lista")
     public ResponseEntity<List<Producto>> list(){
         List<Producto> list = productoService.list();
         return new ResponseEntity<List<Producto>>(list, HttpStatus.OK);
